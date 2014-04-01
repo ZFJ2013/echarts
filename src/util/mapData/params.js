@@ -65,6 +65,13 @@ define(function(require) {
     }
 
     var mapParams = {
+		'continent': {
+            getGeoJson: function(callback) { 
+                require(['./geoJson/continent_geo'], function(md){
+                    callback(decode(md));
+                });
+            }
+        },
         'world': {
             getGeoJson: function(callback) { 
                 require(['./geoJson/world_geo'], function(md){
